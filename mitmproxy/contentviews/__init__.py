@@ -22,7 +22,8 @@ from mitmproxy.net import http
 from mitmproxy.utils import strutils
 from . import (
     auto, raw, hex, json, xml_html, wbxml, javascript, css,
-    urlencoded, multipart, image, query, protobuf
+    urlencoded, multipart, image, query, protobuf,
+    graphql
 )
 from .base import View, KEY_MAX, format_text, format_dict, TViewResult
 
@@ -162,6 +163,7 @@ add(multipart.ViewMultipart())
 add(image.ViewImage())
 add(query.ViewQuery())
 add(protobuf.ViewProtobuf())
+add(graphql.ViewGraphQL())
 
 __all__ = [
     "View", "KEY_MAX", "format_text", "format_dict", "TViewResult",
