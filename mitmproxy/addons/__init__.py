@@ -6,6 +6,7 @@ from mitmproxy.addons import check_ca
 from mitmproxy.addons import clientplayback
 from mitmproxy.addons import command_history
 from mitmproxy.addons import core
+from mitmproxy.addons import create_wordlist
 from mitmproxy.addons import cut
 from mitmproxy.addons import disable_h2c
 from mitmproxy.addons import export
@@ -20,8 +21,6 @@ from mitmproxy.addons import stickycookie
 from mitmproxy.addons import streambodies
 from mitmproxy.addons import save
 from mitmproxy.addons import upstream_auth
-
-from mitmproxy.addons import webhook
 
 
 def default_addons():
@@ -49,5 +48,6 @@ def default_addons():
         save.Save(),
         upstream_auth.UpstreamAuth(),
 
-        webhook.Webhook(),
+        # custom addons
+        create_wordlist.CreateWordlist(),
     ]
